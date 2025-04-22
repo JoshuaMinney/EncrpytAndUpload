@@ -1,4 +1,4 @@
-#code from Exequiel Barrirero at https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script, but modified by me to do a different role after indentifying OS type
+#some code from Exequiel Barrirero at https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script, but modified by me to do a different role after indentifying OS type
 
 #!/bin/bash
 set -e
