@@ -1,4 +1,7 @@
 #!/bin/bash
+sudo apt remove curl
+sudo apt update
+sudo apt install curl
 
 uploadfilename="$1"
 file="$2"
