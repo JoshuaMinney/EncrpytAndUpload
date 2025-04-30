@@ -1,4 +1,3 @@
-  GNU nano 4.8                                                                                    encryptor2.sh                                                                                    Modified  
 #!/bin/bash
 
 file="$1"
