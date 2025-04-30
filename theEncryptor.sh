@@ -9,7 +9,7 @@ read -s password
 
 recursiveENC()
 {
-        if   [ -d "$1" ]; then
+        if   [ -d "$1" ]; then #only triggers if a directory is passed
                 echo "$1 is a directory";
                 for FILE in "$1"/*; do
                         if [ -d "$FILE" ]; then
@@ -17,13 +17,12 @@ recursiveENC()
 
                         elif [ -f "$FILE" ]; then
                                 echo "encrypting $FILE";
-                                newfile="${FILE}.enc"
+                                newfile="${FILE}.enc" #the file name, just adds .enc to the end
                                 openssl enc -aes-256-cbc -in "$FILE" -out "$newfile" -k "$password"
-                                echo "origianl file deleted: $FILE" 
-                                shred -u "$FILE"
+                                shred -u "$FILE" #deletes original
                         fi
                 done
-        else echo "$1 is not a valid folder";
+        else echo "$1 is not a valid folder"; #directory passed in argumentsis 
                 exit 1
         fi
 }
