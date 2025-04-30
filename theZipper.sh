@@ -1,8 +1,8 @@
-#some code from Exequiel Barrirero at https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script, but modified by me to do a different role after indentifying OS type
-
 #!/bin/bash
 set -e
 
+
+#checks to see which OS is in use, and installs zip accordingly
  if cat /etc/*release | grep ^NAME | grep CentOS; then
  sudo yum install zip
 
@@ -25,10 +25,10 @@ set -e
  sudo pacman -S zip
 
  else
-    echo "OS NOT DETECTED"
+    echo "This OS is not supported."
     exit 1;
  fi
-
+#zips the home directory
 zip -r zippedFiles /home
 
 
